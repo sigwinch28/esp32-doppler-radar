@@ -1,0 +1,23 @@
+menu "Doppler Configuration"
+
+config LED_GPIO
+    int "LED GPIO number"
+	range 0 34
+	default 5
+	help
+		GPIO number (IOxx) to use for radar trigger debug.
+
+		Some GPIOs are used for other purposes (flash connections, etc.) and cannot be used for LED.
+
+                GPIOs 35-39 are input-only so cannot be used as outputs.
+
+config RADAR_GPIO
+    int "Radar GPIO number"
+        range 0 39
+	default 25
+	help
+	        GPIO number (IOxx) to interrupt on rising/falling edged.
+
+                Some GPIOs are used for other purposes (flash connections, etc.) and cannot be used for input.
+
+endmenu
